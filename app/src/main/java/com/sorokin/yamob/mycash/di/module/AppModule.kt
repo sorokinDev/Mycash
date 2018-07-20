@@ -6,18 +6,18 @@ import android.content.SharedPreferences
 import android.preference.PreferenceManager
 import dagger.Module
 import com.sorokin.yamob.mycash.App
+import com.sorokin.yamob.mycash.ui.main.MainViewModel
 import dagger.Provides
 import javax.inject.Singleton
 import ru.terrakok.cicerone.Router
 import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.NavigatorHolder
 
-
-
-
-
-@Module
+@Module(includes = [
+    ViewModelModule::class
+])
 class AppModule {
+
     @Provides
     @Singleton
     fun provideSharedPreference(app: Application): SharedPreferences =
@@ -36,4 +36,5 @@ class AppModule {
     fun provideNavigatorHolder(): NavigatorHolder {
         return cicerone.getNavigatorHolder()
     }
+
 }

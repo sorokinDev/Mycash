@@ -2,7 +2,7 @@ package com.sorokin.yamob.mycash.di.component
 
 import android.app.Application
 import com.sorokin.yamob.mycash.App
-import com.sorokin.yamob.mycash.di.module.ActivityBindingModule
+import com.sorokin.yamob.mycash.di.module.ViewBindingModule
 import com.sorokin.yamob.mycash.di.module.AppModule
 import dagger.BindsInstance
 import dagger.Component
@@ -15,7 +15,7 @@ import javax.inject.Singleton
         modules = [
             AndroidSupportInjectionModule::class,
             AppModule::class,
-            ActivityBindingModule::class
+            ViewBindingModule::class
         ]
 )
 interface AppComponent: AndroidInjector<App> {
