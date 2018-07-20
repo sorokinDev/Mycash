@@ -11,13 +11,17 @@ import android.view.ViewGroup
 import com.sorokin.yamob.mycash.R
 import com.sorokin.yamob.mycash.ui.base.BaseFragment
 import com.sorokin.yamob.mycash.util.getViewModel
+import com.sorokin.yamob.mycash.util.observe
+import kotlinx.android.synthetic.main.fragment_home.*
 import javax.inject.Inject
 
 
 class HomeFragment @Inject constructor() : BaseFragment<HomeViewModel>() {
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("HomeFragment", "Hello from home")
+
+
     }
 
     override fun provideViewModel(): HomeViewModel = getViewModel(viewModelFactory)

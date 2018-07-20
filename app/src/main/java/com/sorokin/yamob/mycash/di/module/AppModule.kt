@@ -12,6 +12,9 @@ import javax.inject.Singleton
 import ru.terrakok.cicerone.Router
 import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.NavigatorHolder
+import dagger.Binds
+
+
 
 @Module(includes = [
     ViewModelModule::class

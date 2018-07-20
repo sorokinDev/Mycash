@@ -21,14 +21,20 @@ abstract class BaseFragment<T: BaseFragmentViewModel>: DaggerFragment() {
         super.onActivityCreated(savedInstanceState)
 
         viewModel.isToolbarVisible.observe(this) {
-            if(activity != null && activity is MainActivity)
+            if(activity is MainActivity)
                 (activity as MainActivity).setToolbarVisibility(it ?: true)
         }
 
         viewModel.toolbarTitle.observe(this){
             activity?.title = it ?: getString(R.string.app_name)
         }
+
+        viewModel.isBottomBarVisible.observe(this){
+            if(activity is MainActivity)
+                (activity as MainActivity).setBottomBarVisibility(it ?: true)
+        }
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

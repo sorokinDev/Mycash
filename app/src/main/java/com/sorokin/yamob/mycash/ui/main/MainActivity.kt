@@ -65,6 +65,10 @@ class MainActivity : DaggerAppCompatActivity() {
         super.onPause()
     }
 
+    fun setBottomBarVisibility(vis: Boolean) {
+        navigation.visibility = if(vis) View.VISIBLE else View.GONE
+    }
+
     val navigator = object : SupportAppNavigator(this, R.id.content){
         override fun createActivityIntent(context: Context?, screenKey: String?, data: Any?): Intent? {
             return null

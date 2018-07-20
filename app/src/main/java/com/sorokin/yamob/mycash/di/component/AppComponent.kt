@@ -4,6 +4,7 @@ import android.app.Application
 import com.sorokin.yamob.mycash.App
 import com.sorokin.yamob.mycash.di.module.ViewBindingModule
 import com.sorokin.yamob.mycash.di.module.AppModule
+import com.sorokin.yamob.mycash.di.module.RepositoryModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -15,7 +16,8 @@ import javax.inject.Singleton
         modules = [
             AndroidSupportInjectionModule::class,
             AppModule::class,
-            ViewBindingModule::class
+            ViewBindingModule::class,
+            RepositoryModule::class
         ]
 )
 interface AppComponent: AndroidInjector<App> {

@@ -3,6 +3,7 @@ package com.sorokin.yamob.mycash.ui.base
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import ru.terrakok.cicerone.Router
+import javax.inject.Inject
 
 abstract class BaseFragmentViewModel constructor(
         router: Router
