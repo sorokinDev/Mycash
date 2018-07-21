@@ -69,10 +69,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:button="@null"
-                        android:text="RUB"
                         android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textSize="20sp" />
+                        android:textColor="@drawable/radiobutton_currency_states"
+                        android:textSize="20sp"
+                        tools:text="RUB"/>
 
                     <RadioButton
                         android:id="@+id/rb_currency_1"
@@ -80,10 +80,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:button="@null"
-                        android:text="USD"
                         android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textSize="20sp" />
+                        android:textColor="@drawable/radiobutton_currency_states"
+                        android:textSize="20sp"
+                        tools:text="USD"/>
 
                     <RadioButton
                         android:id="@+id/rb_currency_2"
@@ -91,10 +91,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:button="@null"
-                        android:text="EUR"
                         android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textSize="20sp" />
+                        android:textColor="@drawable/radiobutton_currency_states"
+                        android:textSize="20sp"
+                        tools:text="EUR"/>
 
                     <RadioButton
                         android:id="@+id/rb_currency_custom"
@@ -102,12 +102,11 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:button="@null"
-                        android:drawableRight="@drawable/ic_keyboard_arrow_down"
-                        android:text="···"
-                        android:paddingRight="16dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@drawable/radiobutton_currency_states"
                         android:textAlignment="center"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:drawableRight="@drawable/ic_keyboard_arrow_down"
+                        android:text="@string/more_currencies"/>
                 </RadioGroup>
             </LinearLayout>
 

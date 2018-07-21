@@ -21,7 +21,20 @@ class HomeFragment @Inject constructor() : BaseFragment<HomeViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.favoriteCurrencies.observe(this){
+            it?.let {
+                rb_currency_0.text = it[0].shortName
+                rb_currency_1.text = it[1].shortName
+                rb_currency_2.text = it[2].shortName
+                if(rg_currencies.checkedRadioButtonId == -1){ // If not checked
+                    rg_currencies.check(R.id.rb_currency_0)
+                }
+            }
+        }
 
+        viewModel.userMoney.observe(this){
+            tv_balance.text = it?.amount?.toString() ?: "0"
+        }
     }
 
     override fun provideViewModel(): HomeViewModel = getViewModel(viewModelFactory)
