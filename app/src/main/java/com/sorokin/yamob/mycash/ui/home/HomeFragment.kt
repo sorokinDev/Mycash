@@ -21,6 +21,14 @@ class HomeFragment @Inject constructor() : BaseFragment<HomeViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        rg_currencies.setOnCheckedChangeListener { group, checkedId ->
+            when(checkedId){
+                R.id.rb_currency_0 -> viewModel.setCurrency(viewModel.favoriteCurrencies.value!![0])
+                R.id.rb_currency_1 -> viewModel.setCurrency(viewModel.favoriteCurrencies.value!![1])
+                R.id.rb_currency_2 -> viewModel.setCurrency(viewModel.favoriteCurrencies.value!![2])
+            }
+        }
+
         viewModel.favoriteCurrencies.observe(this){
             it?.let {
                 rb_currency_0.text = it[0].shortName
@@ -35,6 +43,8 @@ class HomeFragment @Inject constructor() : BaseFragment<HomeViewModel>() {
         viewModel.userMoney.observe(this){
             tv_balance.text = it?.amount?.toString() ?: "0"
         }
+
+
     }
 
     override fun provideViewModel(): HomeViewModel = getViewModel(viewModelFactory)

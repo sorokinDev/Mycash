@@ -10,10 +10,10 @@ class ExchangeRepository @Inject constructor() {
 
     companion object {
         val exchanges = listOf(
-                Exchange(CurrencyRepository.currencies[0], CurrencyRepository.currencies[1], 50.0),
-                Exchange(CurrencyRepository.currencies[0], CurrencyRepository.currencies[2], 70.0),
-                Exchange(CurrencyRepository.currencies[0], CurrencyRepository.currencies[3], 100.0),
-                Exchange(CurrencyRepository.currencies[1], CurrencyRepository.currencies[2], 0.7),
+                Exchange(CurrencyRepository.currencies[0], CurrencyRepository.currencies[1], 1 / 50.0),
+                Exchange(CurrencyRepository.currencies[0], CurrencyRepository.currencies[2], 1 / 70.0),
+                Exchange(CurrencyRepository.currencies[0], CurrencyRepository.currencies[3], 1 / 100.0),
+                Exchange(CurrencyRepository.currencies[1], CurrencyRepository.currencies[2], 7.0 / 5.0),
                 Exchange(CurrencyRepository.currencies[1], CurrencyRepository.currencies[3], 0.5),
                 Exchange(CurrencyRepository.currencies[2], CurrencyRepository.currencies[3], 0.9)
         )

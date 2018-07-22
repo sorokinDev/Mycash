@@ -15,6 +15,7 @@ import android.view.View
 import com.sorokin.yamob.mycash.R
 import com.sorokin.yamob.mycash.ui.home.HomeFragment
 import com.sorokin.yamob.mycash.ui.home.HomeViewModel
+import com.sorokin.yamob.mycash.ui.settings.SettingsFragment
 import com.sorokin.yamob.mycash.util.ViewModelFactory
 import com.sorokin.yamob.mycash.util.getViewModel
 import dagger.android.support.DaggerAppCompatActivity
@@ -30,6 +31,7 @@ class MainActivity : DaggerAppCompatActivity() {
     lateinit var viewModel: MainViewModel
 
     @Inject lateinit var homeFragment: HomeFragment
+    @Inject lateinit var settingsFragment: SettingsFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +43,7 @@ class MainActivity : DaggerAppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener{
             when(it.itemId){
                 R.id.navigation_home -> viewModel.router.newRootScreen("HOME")
+                R.id.navigation_settings -> viewModel.router.newRootScreen("SETTINGS")
                 else -> viewModel.router.newRootScreen("HOME")
             }
             true
@@ -76,6 +79,7 @@ class MainActivity : DaggerAppCompatActivity() {
 
         override fun createFragment(screenKey: String?, data: Any?): Fragment?  = when(screenKey){
             "HOME" -> homeFragment
+            "SETTINGS" -> settingsFragment
             else -> homeFragment
         }
     }
